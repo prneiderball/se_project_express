@@ -7,7 +7,10 @@ const {
   dislikeItem,
 } = require("../controllers/clothingItems");
 const auth = require("../middlewares/auth");
-const { validateCardBody, validateItemId } = require("../middlewares/validation");
+const {
+  validateCardBody,
+  validateItemId,
+} = require("../middlewares/validation");
 
 router.post("/", auth, validateCardBody, createItem);
 
