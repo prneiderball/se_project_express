@@ -1,29 +1,14 @@
 const router = require("express").Router();
-const { body, validationResult } = require("express-validator");
 const { createUser, login } = require("../controllers/users");
 const auth = require("../middlewares/auth");
 const userRouter = require("./users");
 const itemRouter = require("./clothingItems");
-const { BAD_REQUEST, NOT_FOUND } = require("../utils/statusCodes");
+const { validateUserBody, validateLogin } = require("../middlewares/validation");
+const { NOT_FOUND } = require("../utils/statusCodes");
 
-router.post(
-  "/signup",
-  [
-    body("name").isLength({ min: 2, max: 30 }),
-    body("avatar").isURL(),
-    body("email").isEmail(),
-    body("password").isLength({ min: 6 }),
-  ],
-  (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(BAD_REQUEST).json({ message: "Invalid input data" });
-    }
-    return createUser(req, res, next);
-  }
-);
+router.post("/signup", validateUserBody, createUser);
 
-router.post("/signin", login);
+router.post("/signin", validateLogin, login);
 
 router.use("/items", itemRouter);
 
