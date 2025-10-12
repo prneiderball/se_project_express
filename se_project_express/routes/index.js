@@ -4,10 +4,9 @@ const auth = require("../middlewares/auth");
 const userRouter = require("./users");
 const itemRouter = require("./clothingItems");
 const { validateUserBody, validateLogin } = require("../middlewares/validation");
-const { NOT_FOUND } = require("../utils/statusCodes");
+const { NotFoundError } = require("../utils/errors");
 
 router.post("/signup", validateUserBody, createUser);
-
 router.post("/signin", validateLogin, login);
 
 router.use("/items", itemRouter);
@@ -16,8 +15,8 @@ router.use(auth);
 
 router.use("/users", userRouter);
 
-router.use((req, res) =>
-  res.status(NOT_FOUND).json({ message: "This page doesn't exist" })
-);
+router.use((req, res, next) => {
+  next(new NotFoundError("This page doesn't exist"));
+});
 
 module.exports = router;
