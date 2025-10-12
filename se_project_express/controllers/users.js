@@ -7,7 +7,7 @@ const {
   UnauthorizedError,
   ConflictError,
   NotFoundError,
-} = require("../utils/errors");
+} = require("../utils/errors/index");
 const { JWT_SECRET } = require("../utils/config");
 
 const createUser = async (req, res, next) => {

@@ -6,7 +6,7 @@ const {
   ForbiddenError,
   NotFoundError,
   ConflictError,
-} = require("../utils/errors");
+} = require("../utils/errors/index");
 
 const createItem = async (req, res, next) => {
   try {

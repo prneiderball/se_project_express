@@ -7,7 +7,7 @@ const {
   validateUserBody,
   validateLogin,
 } = require("../middlewares/validation");
-const { NotFoundError } = require("../utils/errors");
+const { NotFoundError } = require("../utils/errors/index");
 
 router.post("/signup", validateUserBody, createUser);
 router.post("/signin", validateLogin, login);
