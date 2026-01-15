@@ -23,7 +23,7 @@ mongoose
 
   // allowedOrigin whitelist
 const allowedOrigins = [
-  "http://localhost:3000",
+  "http://localhost:3001",
   "https://prnbwtwr.twilightparadox.com",
 ];
 
