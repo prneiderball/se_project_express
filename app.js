@@ -18,8 +18,8 @@ const logger = winston.createLogger({
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/wtwr_db")
-  .then(() => logger.log("MongoDB connected"))
-  .catch((err) => logger.error("MongoDB connection error:", err));
+  .then(() => logger.info("MongoDB connected"))
+  .catch((err) => logger.error("MongoDB connection error", err));
 
   // allowedOrigin whitelist
 const allowedOrigins = [
