@@ -1,18 +1,20 @@
 # SE Project Express
 
-This is a Node.js backend server built with Express and MongoDB (via Mongoose) for the **WTWR (What To Wear?)** app. It provides a REST API to manage users and clothing items. 
+This is a Node.js backend server built with Express and MongoDB (via Mongoose) for the **WTWR (What To Wear?)** app. It provides a REST API to manage users and clothing items.
 
-Frontend deployed at: https://prnbwtwr.twilightparadox.com/ 
+Frontend deployed at: https://prnbwtwr.twilightparadox.com/
 Server deployed at: https://api.prnbwtwr.twilightparadox.com/
+
+video: https://drive.google.com/file/d/1XCD0ok2xIfZqsR2-Qso2KqVmJnRSG_O_/view?usp=sharing
 
 ## Features
 
-* REST API with Express
-* MongoDB with Mongoose
-* User and ClothingItem models
-* Data validation with express-validator
-* Like/dislike functionality for clothing items
-* Error handling
+- REST API with Express
+- MongoDB with Mongoose
+- User and ClothingItem models
+- Data validation with express-validator
+- Like/dislike functionality for clothing items
+- Error handling
 
 ## Getting Started
 
@@ -39,15 +41,15 @@ Server deployed at: https://api.prnbwtwr.twilightparadox.com/
 
 ## Database
 
-* Connects to `mongodb://127.0.0.1:27017/wtwr_db`.
+- Connects to `mongodb://127.0.0.1:27017/wtwr_db`.
 
 ## API Endpoints
 
 ### Users
 
-* **POST /users** — Create a new user.
+- **POST /users** — Create a new user.
 
-  * Body:
+  - Body:
 
     ```json
     {
@@ -56,15 +58,15 @@ Server deployed at: https://api.prnbwtwr.twilightparadox.com/
     }
     ```
 
-* **GET /users** — Get all users.
+- **GET /users** — Get all users.
 
-* **GET /users/\:userId** — Get a user by ID.
+- **GET /users/\:userId** — Get a user by ID.
 
 ### Clothing Items
 
-* **POST /clothingItems** — Create a clothing item.
+- **POST /clothingItems** — Create a clothing item.
 
-  * Body:
+  - Body:
 
     ```json
     {
@@ -74,10 +76,10 @@ Server deployed at: https://api.prnbwtwr.twilightparadox.com/
     }
     ```
 
-* **GET /clothingItems** — Get all clothing items.
+- **GET /clothingItems** — Get all clothing items.
 
-* **PUT /clothingItems/\:itemId/likes** — Like a clothing item.
+- **PUT /clothingItems/\:itemId/likes** — Like a clothing item.
 
-* **DELETE /clothingItems/\:itemId/likes** — Dislike a clothing item.
+- **DELETE /clothingItems/\:itemId/likes** — Dislike a clothing item.
 
-* **DELETE /clothingItems/\:itemId** — Delete a clothing item.
+- **DELETE /clothingItems/\:itemId** — Delete a clothing item.
